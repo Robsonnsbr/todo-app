@@ -15,7 +15,7 @@ O **Todo App** é uma aplicação moderna de gerenciamento de tarefas, construí
 - **ESLint:** identificar e corrigir problemas de código.
 - **Prettier:** Formatador de código.
 
-O projeto é hospedado no Vercel e está acessível [aqui](https://todo-app-green-two.vercel.app/).
+O projeto é hospedado no Vercel e está acessível [aqui](https://todo-app-two-ecru-12.vercel.app/).
 
 ## Getting Started
 

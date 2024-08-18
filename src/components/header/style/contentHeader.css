@@ -1,0 +1,8 @@
+.class-header {
+  @apply w-full flex fixed top-0 left-0 items-center bg-whiteSnow  z-50
+}
+
+.contentHeader {
+  @apply w-full h-full flex justify-between items-center;
+  display: flex;
+}

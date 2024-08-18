@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* reset and initial styles project */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+/*  remove browser border pattern  */
+:focus {  
+ box-shadow: none !important  
+  }
+
+  :root {
+  /* defining application default colors ready also in tailwind.config.ts */
+  --foregroundFontBlack: #000;
+  --whiteSnow: #FFFAFA;
+  --lightGray: #e6e8ec;
+  --mediumGray: #bcbaba;
+  --deepGray: #51646E;
+  --starYellow: #FFA000;
+  --activeColor: #0091ff;
+  --errorColor: #F00;
+
+  /* define header and footer and then calculate */
+  --height-header: 60px;
+  --height-footer: 359px;
+}
+
+
+/* limit application images  */
+img {
+  max-width: 100%;
+}
+
+/* definindo fontes para a aplicação */
+h1, h2, h3,h4, h5, p, label, form, input, textarea{
+  font-family: var(--font-inter);
+  background: var(--whiteSnow)
+ }
+ input, textarea {
+  outline: none;
+  padding: 16px 24px;
+ }
+
+
+/* center item on body */
+body {
+  @apply flex justify-center;
+}
+
+/* utilities for tailwind */
+@layer utilities {
+
+  .global-height-header {
+    min-height: var(--height-header);
+  }
+    
+  .global-height-footer {
+    min-height: var(--height-header);
+  }
+
+  .global-height-main {
+    min-height: calc(100vh - (var(--height-header) - var(--height-footer)));
+  }
+
+  .global-section {
+    @apply w-full h-fit pt-8
+  }   
+}

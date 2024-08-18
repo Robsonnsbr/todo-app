@@ -36,7 +36,7 @@ const ColorPickerModal: React.FC<IColorPickerProps> = ({
   return (
     <div
       ref={modalRef}
-      className="z-30 fixed bottom-10 bg-whiteSnow p-2 rounded shadow-md flex flex-row flex-wrap gap-2"
+      className="z-30 fixed bottom-10 -translate-x-8 bg-whiteSnow rounded shadow-md flex flex-wrap justify-center gap-1 p-2"
     >
       {Object.values(Color)
         .filter(

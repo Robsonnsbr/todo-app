@@ -69,6 +69,6 @@ body {
   }
 
   .global-section {
-    @apply w-full h-fit pt-8
+    @apply w-full h-fit pt-4
   }   
 }

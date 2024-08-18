@@ -37,20 +37,21 @@ export const ListTasksEdit = () => {
     <div>
       <BreadcrumbsFilter />
       {filteredTasks.length > 0 ? (
-        <div
-          className="z-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10
-"
-        >
+        <div className="flex flex-wrap justify-center gap-4">
           {filteredTasks
             .slice()
             .reverse()
             .map((task) => (
-              <div data-aos="flip-left" key={task._id} className="z-0">
+              <div
+                data-aos="flip-left"
+                key={task._id}
+                className="flex-grow max-w-[384px] min-w-[300px] w-full min-h-[420px] sm:w-1/2 lg:w-1/3 p-2"
+              >
                 <div
                   style={{
                     backgroundColor: task.color || 'var(--whiteSnow)'
                   }}
-                  className="z-10 flex flex-col relative border rounded-3xl shadow-md w-full h-full min-h-[430px]"
+                  className="z-10 flex relative flex-col border rounded-3xl shadow-md w-full h-full"
                 >
                   <StarCheckbox
                     taskId={task._id}

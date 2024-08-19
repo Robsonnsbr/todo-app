@@ -9,7 +9,7 @@ const BreadcrumbsFilter = () => {
   return (
     <nav
       title="filter"
-      className="flex justify-between font-inter text-xs text-deepGray font-medium"
+      className="flex flex-wrap sm:justify-between sm: gap-1 font-inter text-xs text-deepGray font-medium"
     >
       <span>{phrase}</span>
       <span>

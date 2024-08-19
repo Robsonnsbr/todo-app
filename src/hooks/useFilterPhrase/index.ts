@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Color, FilterPropsCustom } from 'src/types/taskType';
+import { Color, FilterPropsCustom, ITaskProps } from 'src/types/taskType';
 
 const colorNames: { [key in Color]: string } = {
   [Color.None]: 'Nenhuma',
@@ -18,15 +18,22 @@ const colorNames: { [key in Color]: string } = {
   [Color.Olive]: 'Oliva'
 };
 
-export const useFilterPhrase = (filters: FilterPropsCustom) => {
+export const useFilterPhrase = (
+  filters: FilterPropsCustom,
+  filteredTasks?: ITaskProps[]
+) => {
   const { title, isFavorite, color } = filters;
-
-  const [phrase, setPhrase] = useState<string>('Todos');
+  const [phrase, setPhrase] = useState<string>(`Todos`);
+  const [qtFiltered, setQTFiltered] = useState<number>(0);
 
   useEffect(() => {
     const colorName = color ? colorNames[color] : '';
 
-    let newPhrase = 'Todos';
+    if (filteredTasks) {
+      setQTFiltered(filteredTasks.length);
+    }
+
+    let newPhrase = `Todos`;
 
     if (isFavorite && title && colorName) {
       newPhrase = `Favoritos > ${title} > ${colorName}`;
@@ -45,7 +52,7 @@ export const useFilterPhrase = (filters: FilterPropsCustom) => {
     }
 
     setPhrase(newPhrase);
-  }, [color, isFavorite, title]);
+  }, [color, filteredTasks, isFavorite, qtFiltered, title]);
 
-  return phrase;
+  return { phrase, qtFiltered };
 };
